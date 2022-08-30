@@ -1,10 +1,10 @@
 {
-  "name": "shorturl",
+  "name": "url-shortner-fcc-backend-project",
   "version": "0.0.3",
   "description": "API project for freeCodeCamp",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "nodemon index.js",
     "dev": "nodemon index.js"
   },
   "dependencies": {

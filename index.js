@@ -4,7 +4,7 @@ const cors = require('cors');
 const app = express();
 
 // Basic Configuration
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8000;
 
 app.use(cors());
 
@@ -18,6 +18,9 @@ app.get('/', function(req, res) {
 app.get('/api/hello', function(req, res) {
   res.json({ greeting: 'hello API' });
 });
+
+// API for Shortening a url
+
 
 app.listen(port, function() {
   console.log(`Listening on port ${port}`);
