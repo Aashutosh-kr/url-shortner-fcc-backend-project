@@ -1,46 +1,77 @@
+*,
+::after,
+::before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-  color: #222;
-  background-color: #fff;
-  text-align: center;
-  line-height: 1.4em;
-}
-
-main {
-  padding: 0;
-  margin-top: 40px;
-}
-
-h3 {
-  margin-top: 30px;
-}
-
-
-
-.user-stories li {
-  margin-bottom: 1em;
+	font-family: Arial, sans-serif;
+	font-size: 16px;
+	color: #222;
+	background-color: #fff;
+	text-align: center;
+	line-height: 1.4em;
+	height: 100vh;
 }
 
 a {
-  color: #2574a9;
+	text-decoration: underline;
+	color: inherit;
+}
+
+header {
+	padding: 1rem 0;
+	background-color: #fafafa;
+	border-bottom: 1px solid #e0e0e0;
+}
+
+header > h1 {
+	text-align: center;
+	font-size: 2rem;
+	font-weight: normal;
+	margin-bottom: 1rem;
 }
 
 form {
-  margin: 10px auto;
-  padding: 20px;
-  max-width: 600px;
+	margin: 1rem auto;
+	max-width: 600px;
+}
+
+fieldset {
+	padding: 1rem 0.5rem;
+	border-radius: 1rem;
 }
 
 label {
-  margin-right: 10px;
+	margin-right: 10px;
 }
 
 input {
-  padding: 5px;
+	padding: 5px;
 }
 
-input[type='text'] {
-  width: 220px;
-  text-align: center;
+input[type="text"] {
+	width: 220px;
+	text-align: left;
+}
+
+input[type="submit"] {
+	width: 100px;
+	margin-left: 10px;
+	cursor: pointer;
+}
+
+.footer {
+	position: fixed;
+	inset: auto 0 0 0;
+	display: flex;
+	gap: 1rem;
+	justify-content: center;
+	align-items: center;
+	padding: 1rem 0;
+	text-align: center;
+	background-color: #3c3a3a;
+	color: #fff;
 }
