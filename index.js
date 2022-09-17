@@ -28,7 +28,6 @@ app.post("/api/shorturl", async (req, res) => {
 	const { url } = req.body;
 	try {
 		if (url.slice(0, 7) === "http://" || url.slice(0, 8) === "https://") {
-			let shortUrl = (await Url.find().countDocuments()) + 1;
 
 			const oldUrl = await Url.findOne({ input_url: url });
 			return oldUrl
@@ -38,7 +37,7 @@ app.post("/api/shorturl", async (req, res) => {
 				  })
 				: await Url.create({
 						input_url: url,
-						short_url: shortUrl,
+						short_url: (await Url.find().countDocuments()) + 1,
 				  });
 		} else {
 			return res.json({ err: "Invalid url" });
