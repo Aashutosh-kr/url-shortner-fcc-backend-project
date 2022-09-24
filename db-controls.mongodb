@@ -5,11 +5,8 @@
 use('url-shortner');
 
 // Search for documents in the current collection.
-// db.getCollection('urls').find({},{}).sort({
-//     /*
-//     * fieldA: 1 // ascending
-//     * fieldB: -1 // descending
-//     */
-//   });
+// db.getCollection('urls').find({},{}).sort({});
+db.getCollection('urls').estimatedDocumentCount()
+// db.getCollection('urls').countDocuments()
 
-db.getCollection('urls').deleteMany({});
+// db.getCollection('urls').deleteMany({});
