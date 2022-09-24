@@ -18,17 +18,14 @@ app.get("/", function (req, res) {
 	res.sendFile(process.cwd() + "/views/index.html");
 });
 
-// Your first API endpoint
-app.get("/api/hello", function (req, res) {
-	res.json({ greeting: "hello API" });
-});
-
 // API for Shortening a url
 app.post("/api/shorturl", async (req, res) => {
 	const { url } = req.body;
 	try {
-		if (url.slice(0, 7) === "http://" || url.slice(0, 8) === "https://") {
-
+		dns.lookup(url, async (err) => {
+			if (err) {
+				return res.json({ error: "invalid URL" });
+			}
 			const oldUrl = await Url.findOne({ input_url: url });
 			return oldUrl
 				? res.json({
@@ -39,9 +36,7 @@ app.post("/api/shorturl", async (req, res) => {
 						input_url: url,
 						short_url: (await Url.find().countDocuments()) + 1,
 				  });
-		} else {
-			return res.json({ err: "Invalid url" });
-		}
+		});
 	} catch (error) {
 		console.error(error.message);
 		return res.json({ err: error.message });

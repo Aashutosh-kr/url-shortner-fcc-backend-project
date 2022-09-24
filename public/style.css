@@ -42,6 +42,9 @@ form {
 fieldset {
 	padding: 1rem 0.5rem;
 	border-radius: 1rem;
+	display: flex;
+	flex-direction: column;
+	gap:1rem;
 }
 
 label {
@@ -53,13 +56,12 @@ input {
 }
 
 input[type="text"] {
-	width: 220px;
 	text-align: left;
 }
 
 input[type="submit"] {
 	width: 100px;
-	margin-left: 10px;
+	margin-inline: auto;
 	cursor: pointer;
 }
 
